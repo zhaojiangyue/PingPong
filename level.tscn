@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwutumsf3k1pc"]
+
+[ext_resource type="PackedScene" uid="uid://d0vhwkmkuxhyl" path="res://character/ball.tscn" id="1_2ufr3"]
+[ext_resource type="PackedScene" uid="uid://ta0ahib1828l" path="res://character/opponent.tscn" id="2_cxjop"]
+[ext_resource type="PackedScene" uid="uid://bgrbh4snkcef4" path="res://character/player.tscn" id="3_h6ps5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38pui"]
+size = Vector2(1280, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7t8"]
+size = Vector2(20, 720)
+
+[node name="Level" type="Node2D"]
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="WallTop&Down" type="StaticBody2D" parent="Collisions"]
+position = Vector2(640, 2.08165e-12)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WallTop&Down"]
+shape = SubResource("RectangleShape2D_38pui")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/WallTop&Down"]
+position = Vector2(2.08165e-12, 720)
+shape = SubResource("RectangleShape2D_38pui")
+
+[node name="OpponentWin" type="Area2D" parent="Collisions"]
+position = Vector2(2.08165e-12, 360)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/OpponentWin"]
+shape = SubResource("RectangleShape2D_fl7t8")
+
+[node name="PlayerWin" type="Area2D" parent="Collisions"]
+position = Vector2(1280, 360)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/PlayerWin"]
+shape = SubResource("RectangleShape2D_fl7t8")
+
+[node name="Ball" parent="." instance=ExtResource("1_2ufr3")]
+position = Vector2(640, 320)
+
+[node name="Opponent" parent="." instance=ExtResource("2_cxjop")]
+position = Vector2(1240, 320)
+
+[node name="Player" parent="." instance=ExtResource("3_h6ps5")]
+position = Vector2(40, 320)
