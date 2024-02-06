@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwutumsf3k1pc"]
+[gd_scene load_steps=12 format=3 uid="uid://dwutumsf3k1pc"]
 
 [ext_resource type="PackedScene" uid="uid://d0vhwkmkuxhyl" path="res://character/ball.tscn" id="1_2ufr3"]
 [ext_resource type="Script" path="res://level.gd" id="1_lt7ac"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bgrbh4snkcef4" path="res://character/player.tscn" id="3_h6ps5"]
 [ext_resource type="Script" path="res://character/player.gd" id="4_1gwvo"]
 [ext_resource type="Script" path="res://character/opponent.gd" id="4_ljjnv"]
+[ext_resource type="AudioStream" uid="uid://cjvgjoyos0wtg" path="res://sfx/ping_pong_8bit_plop.ogg" id="8_dlve6"]
+[ext_resource type="AudioStream" uid="uid://25n2kxmj3i7x" path="res://sfx/ping_pong_8bit_beeep.ogg" id="8_nek1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38pui"]
 size = Vector2(1280, 20)
@@ -122,6 +124,12 @@ theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="SFX_Collision" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_dlve6")
+
+[node name="SFX_Score" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_nek1m")
 
 [connection signal="body_entered" from="Collisions/OpponentWin" to="." method="_on_opponent_win_body_entered"]
 [connection signal="body_entered" from="Collisions/PlayerWin" to="." method="_on_player_win_body_entered"]
