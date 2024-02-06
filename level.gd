@@ -13,3 +13,4 @@ func _on_player_win_body_entered(body):
 func update_score(body,label):
 	if body == ball:
 		label.text = str(int(label.text)+1)
+		body.position = Vector2(640,360)
