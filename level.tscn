@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwutumsf3k1pc"]
+[gd_scene load_steps=10 format=3 uid="uid://dwutumsf3k1pc"]
 
 [ext_resource type="PackedScene" uid="uid://d0vhwkmkuxhyl" path="res://character/ball.tscn" id="1_2ufr3"]
+[ext_resource type="Script" path="res://level.gd" id="1_lt7ac"]
 [ext_resource type="PackedScene" uid="uid://ta0ahib1828l" path="res://character/opponent.tscn" id="2_cxjop"]
 [ext_resource type="Script" path="res://character/ball.gd" id="2_puktd"]
 [ext_resource type="PackedScene" uid="uid://bgrbh4snkcef4" path="res://character/player.tscn" id="3_h6ps5"]
@@ -14,6 +15,7 @@ size = Vector2(1280, 20)
 size = Vector2(20, 720)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_lt7ac")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0
@@ -95,3 +97,6 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="body_entered" from="Collisions/OpponentWin" to="." method="_on_opponent_win_body_entered"]
+[connection signal="body_entered" from="Collisions/PlayerWin" to="." method="_on_player_win_body_entered"]
