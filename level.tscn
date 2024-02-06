@@ -49,7 +49,7 @@ shape = SubResource("RectangleShape2D_fl7t8")
 
 [node name="Ball" parent="." instance=ExtResource("1_2ufr3")]
 unique_name_in_owner = true
-position = Vector2(640, 320)
+position = Vector2(640, 360)
 script = ExtResource("2_puktd")
 
 [node name="Opponent" parent="." instance=ExtResource("2_cxjop")]
@@ -59,3 +59,39 @@ script = ExtResource("4_ljjnv")
 [node name="Player" parent="." instance=ExtResource("3_h6ps5")]
 position = Vector2(40, 320)
 script = ExtResource("4_1gwvo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScorePlayer" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -27.0
+offset_right = -19.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreOpponent" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -27.5
+offset_right = 69.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
