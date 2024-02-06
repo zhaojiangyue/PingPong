@@ -15,6 +15,11 @@ size = Vector2(20, 720)
 
 [node name="Level" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.172549, 0.254902, 0.160784, 1)
+
 [node name="Collisions" type="Node2D" parent="."]
 
 [node name="WallTop&Down" type="StaticBody2D" parent="Collisions"]
