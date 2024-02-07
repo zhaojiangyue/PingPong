@@ -25,6 +25,7 @@ func update_score(body,label):
 		label.text = str(int(label.text)+1)
 		body.position = get_viewport_rect().size/2
 		ball.Stop = true
+		ball.speed = 300
 
 
 func _on_timer_timeout():

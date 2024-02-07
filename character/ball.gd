@@ -16,6 +16,8 @@ func _physics_process(delta):
 				speed += 25 
 		velocity = direction * speed
 		move_and_slide()
+	else:
+		direction = Vector2(init_direction(1),init_direction(0.8))
 
 func init_direction(float):
 	randomize()
